@@ -33,7 +33,7 @@ Guide for creating vm and making of restore point.
 
 `sudo gedit /etc/xen/win7.cfg`
 
-- configure the vm.
+- configure the windows.
 
 ```
 arch = 'x86_64'
@@ -70,4 +70,32 @@ disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.i
 
 <img title="Image 3" alt="windows installation" src="/images/windows.png">
 
- 
+ - After installing the windows, again open windows config file and change the path of windows7.iso to malware.iso.
+
+```
+arch = 'x86_64'
+name = "windows7-sp1"
+maxmem = 3000
+memory = 3000
+vcpus = 2
+maxvcpus = 2
+builder = "hvm"
+boot = "cd"
+hap = 1
+on_poweroff = "destroy"
+on_reboot = "destroy"
+on_crash = "destroy"
+vnc = 1
+vnclisten = "0.0.0.0"
+vga = "stdvga"
+usb = 1
+usbdevice = "tablet"
+audio = 1
+soundhw = "hda"
+viridian = 1
+altp2m = 2
+shadow_memory = 32
+vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
+disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/malware.iso,hdc:cdrom,r' ]
+```
+
