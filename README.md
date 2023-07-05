@@ -62,6 +62,8 @@ vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.iso,hdc:cdrom,r' ]
 ```
 
+`sudo xl create /etc/xen/win7.cfg`
+
 `gvncviewer localhost`
 
 - install the windows.
