@@ -99,7 +99,7 @@ vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/malware.iso,hdc:cdrom,r' ]
 ```
 
-- malware iso will be show as cd drive. copy the malware files to "E" drive
+- malware iso will be show as cd drive. copy the malware files to "E" drive.
 
 <img title="Image 6" alt="drive1" src="/images/cd-drive.png">
 
