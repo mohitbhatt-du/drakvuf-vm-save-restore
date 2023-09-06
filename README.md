@@ -14,7 +14,9 @@ Guide for creating VM and making of restore point.
 
 ### Step : After successfully formatting the partition 4, open terminal and run following commands:
 
-```sudo pvcreate /dev/sda4```
+```
+sudo pvcreate /dev/sda4
+```
 
 `sudo vgcreate vg /dev/sda4`
 
