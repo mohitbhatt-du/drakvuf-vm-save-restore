@@ -10,7 +10,7 @@ This is a guide for creating Virtual Machine in DRAKVUF and then creating it's r
 sudo lvremove windows7-sp1 vg
 ```
 
-### Step 2: Now open Disks, Click on partition 4 then click additional settings and follow as shown in below images.
+### Step 2: Now open Disks, Click on partition 4 then click additional settings, Click format partition and follow as shown in below images.
 
 <img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
 
