@@ -88,7 +88,7 @@ sudo xl save domain id snapshot.sav /etc/xen/win7.cfg
 - To restore the vm use this:
 
 ```
-sudo xl restore /etc/xen/win7.cfg
+sudo xl restore /etc/xen/win7.cfg snapshot.sav
 ```
 
 
