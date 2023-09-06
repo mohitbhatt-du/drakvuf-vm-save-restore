@@ -5,7 +5,7 @@
 
 
 
-### Step : After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
+### Step 2: After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
 
 <img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
 
@@ -15,7 +15,7 @@
 <img title="Image 3" alt="disks3" src="/images/disks3.png" width="650" height="500">
 
 
-### Step : After successfully formatting the partition 4, open terminal and run following commands:
+### Step 3: After successfully formatting the partition 4, open terminal and run following commands:
 
 ```
 sudo pvcreate /dev/sda4
@@ -78,7 +78,7 @@ gvncviewer localhost
 
 
 
-### Step : Creation of restore point:
+### Step 4: Creation of restore point:
 
 ```
 cd drakvuf
