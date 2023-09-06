@@ -27,8 +27,6 @@ sudo vgcreate vg /dev/sda4
 sudo lvcreate -L110G -n windows7-sp1 vg
 ```
 
-- type 'y' and hit enter for above commands.
-
 ```
 sudo gedit /etc/xen/win7.cfg
 ```
