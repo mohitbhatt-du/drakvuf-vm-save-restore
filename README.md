@@ -9,6 +9,7 @@ Guide for creating VM and making of restore point.
 
 <img title="Image 2" alt="disks2" src="/images/disks2.png">
 
+- It will start formatting partition 4.
 <img title="Image 3" alt="disks3" src="/images/disks3.png">
 
 
