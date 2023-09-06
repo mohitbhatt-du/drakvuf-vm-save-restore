@@ -76,7 +76,7 @@ gvncviewer localhost
 
 
 
-### Step : Save the restore point by using command:
+### Step : Create restore point by using these commands:
 
 ```
 cd drakvuf
@@ -90,6 +90,12 @@ sudo xl save domain id snapshot.sav /etc/xen/win7.cfg
 
 ```
 sudo xl restore /etc/xen/win7.cfg snapshot.sav
+```
+
+- To check Process list of VM:
+  
+```
+sudo vmi-process-list windows7-sp1
 ```
 
 
