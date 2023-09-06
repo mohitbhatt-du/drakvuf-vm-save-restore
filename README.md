@@ -1,9 +1,9 @@
 # drakvuf-vm-save-restore
-Guide for creating vm and making of restore point.
+Guide for creating VM and making of restore point.
 
 
 
-### Step 4: After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
+### Step : After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
 
 <img title="Image 1" alt="disks1" src="/images/disks.png">
 
@@ -12,9 +12,9 @@ Guide for creating vm and making of restore point.
 <img title="Image 3" alt="disks3" src="/images/disks3.png">
 
 
-### Step 6: After successfully formatting the partition 4, open terminal and run following commands:
+### Step : After successfully formatting the partition 4, open terminal and run following commands:
 
-`sudo pvcreate /dev/sda4`
+```sudo pvcreate /dev/sda4```
 
 `sudo vgcreate vg /dev/sda4`
 
@@ -63,7 +63,7 @@ disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.i
 
 
 
-### Step 7: Save the restore point by using command:
+### Step : Save the restore point by using command:
 
 `cd drakvuf`
 
