@@ -59,7 +59,7 @@ shadow_memory = 32
 vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.iso,hdc:cdrom,r' ]
 ```
-**Note -** Here, 'maxmem', 'memory' and 'vcpus' are personal preference. User can change it according to his need or system specification (Host Machine).
+**Note -** Here, *'maxmem'*, *'memory'* and *'vcpus'* are personal preference. User can change it according to his need or system specification (Host Machine).
 
 
 ```
@@ -86,7 +86,7 @@ cd drakvuf
 sudo xl save domain id snapshot.sav /etc/xen/win7.cfg
 ```
 
-- To restore the vm use this:
+- To restore the VM:
 
 ```
 sudo xl restore /etc/xen/win7.cfg snapshot.sav
