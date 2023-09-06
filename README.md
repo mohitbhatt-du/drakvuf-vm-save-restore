@@ -18,13 +18,19 @@ Guide for creating VM and making of restore point.
 sudo pvcreate /dev/sda4
 ```
 
-`sudo vgcreate vg /dev/sda4`
+```
+sudo vgcreate vg /dev/sda4
+```
 
-`sudo lvcreate -L110G -n windows7-sp1 vg`
+```
+sudo lvcreate -L110G -n windows7-sp1 vg
+```
 
 - type 'y' and hit enter for above commands.
 
-`sudo gedit /etc/xen/win7.cfg`
+```
+sudo gedit /etc/xen/win7.cfg
+```
 
 - configure the windows.
 
@@ -55,9 +61,13 @@ vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.iso,hdc:cdrom,r' ]
 ```
 
-`sudo xl create /etc/xen/win7.cfg`
+```
+sudo xl create /etc/xen/win7.cfg
+```
 
-`gvncviewer localhost`
+```
+gvncviewer localhost
+```
 
 - install the windows.
 
@@ -67,12 +77,19 @@ disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.i
 
 ### Step : Save the restore point by using command:
 
-`cd drakvuf`
+```
+cd drakvuf
+```
 
-`sudo xl save domain id snapshot.sav /etc/xen/win7.cfg`
+```
+sudo xl save domain id snapshot.sav /etc/xen/win7.cfg
+```
 
 - To restore the vm use this:
-`sudo xl restore /etc/xen/win7.cfg`
+
+```
+sudo xl restore /etc/xen/win7.cfg
+```
 
 
 
