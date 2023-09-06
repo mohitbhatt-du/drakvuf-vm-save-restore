@@ -5,9 +5,12 @@ This is a guide for creating Virtual Machine in DRAKVUF and then creating it's r
 ***Note:*** It's only applicable if DRAKVUF is already installed.
 
 
-### Step 1:
+### Step 1: To remove previous VM:
+```
+sudo lvremove windows7-sp1 vg
+```
 
-### Step 2: After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
+### Step 2: Now open Disks, Click on partition 4 then click additional settings and follow as shown in below images.
 
 <img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
 
