@@ -78,7 +78,7 @@ gvncviewer localhost
 
 
 
-### Step : Create restore point by using these commands:
+### Step : Creation of restore point:
 
 ```
 cd drakvuf
