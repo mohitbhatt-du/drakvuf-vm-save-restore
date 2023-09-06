@@ -5,12 +5,12 @@ Guide for creating VM and making of restore point.
 
 ### Step : After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
 
-<img title="Image 1" alt="disks1" src="/images/disks.png">
+<img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
 
-<img title="Image 2" alt="disks2" src="/images/disks2.png">
+<img title="Image 2" alt="disks2" src="/images/disks2.png" width="650" height="500">
 
 - It will start formatting partition 4.
-<img title="Image 3" alt="disks3" src="/images/disks3.png">
+<img title="Image 3" alt="disks3" src="/images/disks3.png" width="650" height="500">
 
 
 ### Step : After successfully formatting the partition 4, open terminal and run following commands:
@@ -72,7 +72,7 @@ gvncviewer localhost
 
 - install the windows.
 
-<img title="Image 5" alt="windows installation" src="/images/windows.png">
+<img title="Image 5" alt="windows installation" src="/images/windows.png" width="650" height="500">
 
 
 
