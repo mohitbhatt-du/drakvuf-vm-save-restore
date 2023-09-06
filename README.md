@@ -36,8 +36,8 @@ sudo gedit /etc/xen/win7.cfg
 ```
 arch = 'x86_64'
 name = "windows7-sp1"
-maxmem = 3000
-memory = 3000
+maxmem = 2048
+memory = 2048
 vcpus = 2
 maxvcpus = 2
 builder = "hvm"
@@ -59,6 +59,8 @@ shadow_memory = 32
 vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.iso,hdc:cdrom,r' ]
 ```
+**Note -** Here, 'maxmem', 'memory' and 'vcpus' are personal preference. User can change it according to his need or system specification (Host Machine).
+
 
 ```
 sudo xl create /etc/xen/win7.cfg
