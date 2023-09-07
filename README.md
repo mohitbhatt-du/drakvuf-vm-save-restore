@@ -1,45 +1,50 @@
-# drakvuf-vm-save-restore
-Guide for creating vm and making of restore point.
+# Guide For VM And Restore Point Creation.
 
-### Step 1: Open terminal and enter the command:
- `sudo nautilus`
+This is a guide for creating Virtual Machine in DRAKVUF and then creating it's restore point.
 
-### Step 2: Goto, other locations > computer > dev, then delete vg and mapper folder.
-
-### Step 3: Exit from terminal and open disks from applications menu.
-
-### Step 4: After opening disks, click on partition 4 then click additional settings and follow as shown in below images.
-
-<img title="Image 1" alt="disks1" src="/images/disks.png">
-
-<img title="Image 2" alt="disks2" src="/images/disks2.png">
-
-<img title="Image 3" alt="disks3" src="/images/disks3.png">
+***Note:*** It's only applicable if DRAKVUF is already installed.
 
 
-### Step 5: If this error shows then reboot your system and do step 4 again.
+### Step 1: To remove previous VM:
+```
+sudo lvremove windows7-sp1 vg
+```
 
-<img title="Image 4" alt="Disks" src="/images/error.png">
+### Step 2: Navigate to Disks, select partition 4, access aditional settings, choose format partition as shown in below images.
 
-### Step 6: After successfully formatting the partition 4, open terminal and run following commands:
+<img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
 
-`sudo pvcreate /dev/sda4`
+<img title="Image 2" alt="disks2" src="/images/disks2.png" width="650" height="500">
 
-`sudo vgcreate vg /dev/sda4`
+#### It will start formatting partition 4.
+<img title="Image 3" alt="disks3" src="/images/disks3.png" width="650" height="500">
 
-`sudo lvcreate -L110G -n windows7-sp1 vg`
 
-- type 'y' and hit enter for above commands.
+### Step 3: After successfully formatting the partition 4, open terminal and run following commands:
 
-`sudo gedit /etc/xen/win7.cfg`
+```
+sudo pvcreate /dev/sda4
+```
 
-- configure the windows.
+```
+sudo vgcreate vg /dev/sda4
+```
+
+```
+sudo lvcreate -L110G -n windows7-sp1 vg
+```
+
+```
+sudo gedit /etc/xen/win7.cfg
+```
+
+#### Configure the windows specification.
 
 ```
 arch = 'x86_64'
 name = "windows7-sp1"
-maxmem = 3000
-memory = 3000
+maxmem = 2048
+memory = 2048
 vcpus = 2
 maxvcpus = 2
 builder = "hvm"
@@ -61,64 +66,44 @@ shadow_memory = 32
 vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.iso,hdc:cdrom,r' ]
 ```
+**Note -** Here, *'maxmem'*, *'memory'* and *'vcpus'* are personal preferences. User can change it according to his need or system specification (Host Machine).
 
-`sudo xl create /etc/xen/win7.cfg`
-
-`gvncviewer localhost`
-
-- install the windows.
-
-<img title="Image 5" alt="windows installation" src="/images/windows.png">
-
- - After installing the windows, again open windows config file, change the path of windows7.iso to malware.iso and boot vm again.
 
 ```
-arch = 'x86_64'
-name = "windows7-sp1"
-maxmem = 3000
-memory = 3000
-vcpus = 2
-maxvcpus = 2
-builder = "hvm"
-boot = "cd"
-hap = 1
-on_poweroff = "destroy"
-on_reboot = "destroy"
-on_crash = "destroy"
-vnc = 1
-vnclisten = "0.0.0.0"
-vga = "stdvga"
-usb = 1
-usbdevice = "tablet"
-audio = 1
-soundhw = "hda"
-viridian = 1
-altp2m = 2
-shadow_memory = 32
-vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
-disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/malware.iso,hdc:cdrom,r' ]
+sudo xl create /etc/xen/win7.cfg
 ```
 
-- malware iso will be show as cd drive. copy the malware files to "E" drive.
+```
+gvncviewer localhost
+```
 
-<img title="Image 6" alt="drive1" src="/images/cd-drive.png">
+#### Install and Setup the windows.
 
-<img title="Image 7" alt="drive2" src="/images/copy-malware-files.png">
+<img title="Image 5" alt="windows installation" src="/images/windows.png" width="650" height="500">
 
-- Now, turn off the firewall and edit user account control from control panel as shown in below images.
 
-<img title="Image 8" alt="firewall" src="/images/firewall.png">
 
-<img title="Image 9" alt="user account control" src="/images/uac1.png">
+### Step 4: Creation of restore point:
 
-### Step 7: Save the restore point by using command:
+```
+cd drakvuf
+```
 
-`cd drakvuf`
+```
+sudo xl save domain id snapshot.sav /etc/xen/win7.cfg
+```
 
-`sudo xl save domain id /etc/xen/win7.cfg`
+#### To restore the VM:
 
-- To restore the vm use this:
-`sudo xl restore /etc/xen/win7.cfg`
+```
+sudo xl restore /etc/xen/win7.cfg snapshot.sav
+```
+
+#### To check process list of VM:
+  
+```
+sudo vmi-process-list windows7-sp1
+```
 
 
 
