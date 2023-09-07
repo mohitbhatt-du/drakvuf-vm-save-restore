@@ -12,12 +12,16 @@ sudo lvremove windows7-sp1 vg
 
 ### Step 2: Navigate to Disks, select partition 4, access aditional settings, choose format partition as shown in below images.
 
-<img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
+<img title="Image 1" alt="Figure 1" src="/images/disks.png" width="650" height="500">
 
-<img title="Image 2" alt="disks2" src="/images/disks2.png" width="650" height="500">
+<img title="Image 2" alt="Figure 2" src="/images/disks4.png" width="650" height="500">
+
+<img title="Image 3" alt="Figure 3" src="/images/disks2.png" width="650" height="500">
+
+
 
 #### It will start formatting partition 4.
-<img title="Image 3" alt="disks3" src="/images/disks3.png" width="650" height="500">
+<img title="Image 4" alt="Figure 4" src="/images/disks3.png" width="650" height="500">
 
 
 ### Step 3: After successfully formatting the partition 4, open terminal and run following commands:
