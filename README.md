@@ -10,7 +10,7 @@ This is a guide for creating Virtual Machine in DRAKVUF and then creating it's r
 sudo lvremove windows7-sp1 vg
 ```
 
-### Step 2: Now open Disks, Click on partition 4 then click additional settings, Click format partition and follow as shown in below images.
+### Step 2: Navigate to Disks, select partition 4, access aditional settings, choose format partition as shown in below images.
 
 <img title="Image 1" alt="disks1" src="/images/disks.png" width="650" height="500">
 
@@ -66,7 +66,7 @@ shadow_memory = 32
 vif = [ 'type=ioemu,model=e1000,bridge=virbr0,mac=48:9e:bd:9e:2b:0d']
 disk = [ 'phy:/dev/vg/windows7-sp1,hda,w', 'file:/home/pc-1/Downloads/windows7.iso,hdc:cdrom,r' ]
 ```
-**Note -** Here, *'maxmem'*, *'memory'* and *'vcpus'* are personal preference. User can change it according to his need or system specification (Host Machine).
+**Note -** Here, *'maxmem'*, *'memory'* and *'vcpus'* are personal preferences. User can change it according to his need or system specification (Host Machine).
 
 
 ```
